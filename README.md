@@ -1,5 +1,5 @@
 # Bayesian Networks to study the factors affecting the population of Pacific Walrus
-This is an attempt to explain the impact of environmental and anthropogenic factors affecting the survival of Pacific Walrus by utilizing the Bayesian Networks and probabilistic inference techniques.
+This is an attempt to explain the impact of environmental and anthropogenic factors on the decreasing population of Pacific Walrus. Factors have been modelled using Bayesian Networks and probabilistic inference techniques.
 
 Please read **report.pdf** to understand more.
 
