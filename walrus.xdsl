@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="V1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="TITLE1">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="GHG">
+			<state id="Satellite" />
+			<state id="A1B" />
+			<state id="A2" />
+			<probabilities>0.3333333333333333 0.3333333333333333 0.3333333333333333</probabilities>
+		</cpt>
+		<cpt id="IceMsumfal">
+			<state id="0 to 0.5" />
+			<state id="0.5 to 2" />
+			<state id="2 to 3.5" />
+			<state id="3.5 to 5" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="IceCsumfal">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="IceBsumfal">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<equation id="IceMsumfal">
+			<definition lower="0" upper="0">IceMsumfal=0</definition>
+		</equation>
+		<equation id="IceCsumfal">
+			<definition lower="100" upper="100">IceCsumfal=0</definition>
+		</equation>
+		<equation id="IceBsumfal">
+			<definition lower="100" upper="100">IceBsumfal=0</definition>
+		</equation>
+		<cpt id="SIEsumfal">
+			<state id="both" />
+			<state id="one" />
+			<state id="insufficient" />
+			<parents>IceCsumfal IceBsumfal</parents>
+			<probabilities>0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1</probabilities>
+		</cpt>
+		<cpt id="AVAsumfal">
+			<state id="excellent" />
+			<state id="good" />
+			<state id="fair" />
+			<state id="poor" />
+			<parents>IceMsumfal SIEsumfal</parents>
+			<probabilities>1 0 0 0 0.95 0.05 0 0 0 0.25 0.5 0.25 0 0.15 0.5 0.35 0 0.1 0.5 0.4 0 0 0.15 0.85 0 0.1 0.2 0.7 0 0.05 0.2 0.75 0 0 0.1 0.9 0 0 0.15 0.85 0 0 0.1 0.9 0 0 0 1</probabilities>
+		</cpt>
+		<cpt id="DPsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAsumfal</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.7000000000000001 0.2 0.1 0.6000000000000001 0.3 0.1</probabilities>
+		</cpt>
+		<cpt id="CCBsumfal">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="RUsumfal">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="SATsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="OILsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>SATsumfal</parents>
+			<probabilities>0.9 0.1 0 0.7000000000000001 0.2 0.1 0.5 0.3 0.2</probabilities>
+		</cpt>
+		<cpt id="BENsumfal">
+			<state id="high" />
+			<state id="moderate" />
+			<state id="low" />
+			<parents>CCBsumfal RUsumfal OILsumfal</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.6 0.35 0.05 0.8 0.2 0 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.35 0.6 0.05 0.15 0.7 0.15 0.05 0.6 0.35 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0 0.2 0.8 0.05 0.35 0.6 0 0.2 0.8 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="EEsumfal">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>BENsumfal AVAsumfal</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.2 0.6 0.2 0.05 0.35 0.6 0.75 0.2 0.05 0.35 0.6 0.05 0.05 0.6 0.35 0.05 0.2 0.75 0.2 0.6 0.2 0.05 0.6 0.35 0.05 0.2 0.75 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="PRsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAsumfal</parents>
+			<probabilities>0.9 0.1 0 0.85 0.15 0 0.5 0.3 0.2 0.2 0.4 0.4</probabilities>
+		</cpt>
+		<cpt id="CRsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAsumfal</parents>
+			<probabilities>0.95 0.05 0 0.7 0.25 0.05 0.3 0.4 0.3 0 0.05 0.95</probabilities>
+		</cpt>
+		<equation id="IceCwin">
+			<definition lower="100" upper="100">IceCwin=0</definition>
+		</equation>
+		<equation id="IceBwin">
+			<definition lower="100" upper="100">IceBwin=0</definition>
+		</equation>
+		<cpt id="IceCwin">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="IceBwin">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="SIEwin">
+			<state id="both" />
+			<state id="one" />
+			<state id="insufficient" />
+			<parents>IceCwin IceBwin</parents>
+			<probabilities>0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1</probabilities>
+		</cpt>
+		<equation id="IceCspr">
+			<definition lower="100" upper="100">IceCspr=0</definition>
+		</equation>
+		<equation id="IceBspr">
+			<definition lower="100" upper="100">IceBspr=0</definition>
+		</equation>
+		<cpt id="IceCspr">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="IceBspr">
+			<state id="90 to 100" />
+			<state id="70 to 90" />
+			<state id="30 to 70" />
+			<state id="10 to 30" />
+			<state id="0 to 10" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="SIEspr">
+			<state id="both" />
+			<state id="one" />
+			<state id="insufficient" />
+			<parents>IceCspr IceBspr</parents>
+			<probabilities>0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1 0 0.63 0.34 0.03 0.7 0.3 0 0.7 0.3 0 0.49 0.42 0.09 0 0.7 0.3 0 0.9 0.1 0 1 0 0 1 0 0 0.7 0.3 0 0 1</probabilities>
+		</cpt>
+		<cpt id="SIEall">
+			<state id="both" />
+			<state id="one" />
+			<state id="insufficient" />
+			<parents>SIEsumfal SIEwin SIEspr</parents>
+			<probabilities>1 0 0 0.75 0.25 0 0.75 0 0.25 0.67 0.33 0 0.42 0.58 0 0.42 0.33 0.25 0.67 0 0.33 0.42 0.25 0.33 0.42 0 0.58 0.58 0.42 0 0.33 0.67 0 0.33 0.42 0.25 0.25 0.75 0 0 1 0 0 0.75 0.25 0.25 0.42 0.33 0 0.67 0.33 0 0.42 0.58 0.58 0 0.42 0.33 0.25 0.42 0.33 0 0.67 0.25 0.33 0.42 0 0.58 0.42 0 0.33 0.67 0.25 0 0.75 0 0.25 0.75 0 0 1</probabilities>
+		</cpt>
+		<cpt id="BODsumfal">
+			<state id="high" />
+			<state id="medium" />
+			<state id="low" />
+			<parents>EEsumfal DPsumfal OILsumfal</parents>
+			<probabilities>0.95 0.05 0 0.9 0.1 0 0 0.3 0.7 0.9 0.1 0 0 0.4 0.6 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.9 0.1 0 0.8 0.2 0 0 0.3 0.7 0.8 0.2 0 0 0.3 0.7 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.8 0.2 0 0.7 0.3 0 0 0.2 0.8 0.7 0.3 0 0 0.3 0.7 0 0.1 0.9 0 0.2 0.8 0 0.1 0.9 0 0 1</probabilities>
+		</cpt>
+		<cpt id="HUMsumfal">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="TAOsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="TASsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="DMsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>TAOsumfal TASsumfal</parents>
+			<probabilities>1 0 0 0.75 0.25 0 0 0.8 0.2 0 0 1 0.75 0.25 0 0.33 0.67 0 0 0.43 0.57 0 0 1 0 0.8 0.2 0 0.43 0.57 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="HDsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>HUMsumfal SATsumfal DMsumfal</parents>
+			<probabilities>0.85 0.15 0 0.7 0.25 0.05 0.3 0.5 0.2 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.2 0.5 0.3 0.05 0.25 0.7 0 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="CDsumfal">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>CRsumfal HDsumfal</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.15 0.7 0.15 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.35 0.6 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="TMsumfal">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>PRsumfal CDsumfal DMsumfal</parents>
+			<probabilities>0.95 0.05 0 0.65 0.35 0 0.15 0.6 0.25 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.95 0.05 0 0.5 0.45 0.05 0.05 0.45 0.5 0.65 0.35 0 0.2 0.6 0.2 0 0.35 0.65 0.5 0.45 0.05 0.05 0.45 0.5 0 0.05 0.95 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.25 0.6 0.15 0 0.35 0.65 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="ASsumfal">
+			<state id="low" />
+			<state id="modlow" />
+			<state id="modhigh" />
+			<state id="high" />
+			<parents>BODsumfal TMsumfal</parents>
+			<probabilities>0.9 0.1 0 0 0.3 0.6000000000000001 0.1 0 0 0.25 0.5 0.25 0.6000000000000001 0.3 0.1 0 0.1 0.6 0.3 0 0 0.1 0.3 0.6 0.25 0.5 0.25 0 0 0.1 0.6 0.3 0 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="CCBwin">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="RUwin">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="SATwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="OILwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>SATwin</parents>
+			<probabilities>0.9 0.1 0 0.7000000000000001 0.2 0.1 0.5 0.3 0.2</probabilities>
+		</cpt>
+		<cpt id="BENwin">
+			<state id="high" />
+			<state id="moderate" />
+			<state id="low" />
+			<parents>CCBwin RUwin OILwin</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.6 0.35 0.05 0.8 0.2 0 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.35 0.6 0.05 0.15 0.7 0.15 0.05 0.6 0.35 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0 0.2 0.8 0.05 0.35 0.6 0 0.2 0.8 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="IceMwin">
+			<state id="0 to 0.5" />
+			<state id="0.5 to 2" />
+			<state id="2 to 4" />
+			<probabilities>0.3333333 0.3333333 0.3333333</probabilities>
+		</cpt>
+		<equation id="IceMwin">
+			<definition lower="0" upper="0">IceMwin=0</definition>
+		</equation>
+		<cpt id="AVAwin">
+			<state id="excellent" />
+			<state id="good" />
+			<state id="fair" />
+			<state id="poor" />
+			<parents>IceMwin SIEwin</parents>
+			<probabilities>1 0 0 0 0.95 0.05 0 0 0 0.25 0.5 0.25 0 0.15 0.5 0.35 0 0.1 0.5 0.4 0 0 0.15 0.85 0 0.1 0.2 0.7 0 0.05 0.2 0.75 0 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="EEwin">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>BENwin AVAwin</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.2 0.6 0.2 0.05 0.35 0.6 0.75 0.2 0.05 0.35 0.6 0.05 0.05 0.6 0.35 0.05 0.2 0.75 0.2 0.6 0.2 0.05 0.6 0.35 0.05 0.2 0.75 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="DPwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAwin</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.7000000000000001 0.2 0.1 0.6000000000000001 0.3 0.1</probabilities>
+		</cpt>
+		<cpt id="BODwin">
+			<state id="high" />
+			<state id="medium" />
+			<state id="low" />
+			<parents>EEwin DPwin OILwin</parents>
+			<probabilities>0.95 0.05 0 0.9 0.1 0 0 0.3 0.7 0.9 0.1 0 0 0.4 0.6 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.9 0.1 0 0.8 0.2 0 0 0.3 0.7 0.8 0.2 0 0 0.3 0.7 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.8 0.2 0 0.7 0.3 0 0 0.2 0.8 0.7 0.3 0 0 0.3 0.7 0 0.1 0.9 0 0.2 0.8 0 0.1 0.9 0 0 1</probabilities>
+		</cpt>
+		<cpt id="PRwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAwin</parents>
+			<probabilities>0.9 0.1 0 0.85 0.15 0 0.5 0.3 0.2 0.2 0.4 0.4</probabilities>
+		</cpt>
+		<cpt id="CRwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAwin</parents>
+			<probabilities>0.95 0.05 0 0.7 0.25 0.05 0.3 0.4 0.3 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="HUMwin">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="TAOwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="TASwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="DMwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>TAOwin TASwin</parents>
+			<probabilities>1 0 0 0.75 0.25 0 0 0.8 0.2 0 0 1 0.75 0.25 0 0.33 0.67 0 0 0.43 0.57 0 0 1 0 0.8 0.2 0 0.43 0.57 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="HDwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>HUMwin SATwin DMwin</parents>
+			<probabilities>0.85 0.15 0 0.7 0.25 0.05 0.3 0.5 0.2 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.2 0.5 0.3 0.05 0.25 0.7 0 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="CDwin">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>CRwin HDwin</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.15 0.7 0.15 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.35 0.6 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="TMwin">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>PRwin CDwin DMwin</parents>
+			<probabilities>0.95 0.05 0 0.65 0.35 0 0.15 0.6 0.25 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.95 0.05 0 0.5 0.45 0.05 0.05 0.45 0.5 0.65 0.35 0 0.2 0.6 0.2 0 0.35 0.65 0.5 0.45 0.05 0.05 0.45 0.5 0 0.05 0.95 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.25 0.6 0.15 0 0.35 0.65 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="D">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>AVAwin</parents>
+			<probabilities>0.9 0.1 0 1 1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="ASwin">
+			<state id="low" />
+			<state id="modlow" />
+			<state id="modhigh" />
+			<state id="high" />
+			<parents>BODwin TMwin D</parents>
+			<probabilities>0.9 0.1 0 0 0.9 0.1 0 0 0.6 0.4 0 0 0.6 0.4 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0 0.1 0.6 0.3 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0.6 0.4 0 0 0.6 0.4 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0 0.1 0.6 0.3 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0 0.1 0.6 0.3 0 0 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="CCBspr">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="RUspr">
+			<state id="positive" />
+			<state id="neutral" />
+			<state id="negative" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="SATspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="OILspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>SATspr</parents>
+			<probabilities>0.9 0.1 0 0.7000000000000001 0.2 0.1 0.5 0.3 0.2</probabilities>
+		</cpt>
+		<cpt id="BENspr">
+			<state id="high" />
+			<state id="moderate" />
+			<state id="low" />
+			<parents>CCBspr RUspr OILspr</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.6 0.35 0.05 0.8 0.2 0 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.35 0.6 0.05 0.15 0.7 0.15 0.35 0.6 0.05 0.15 0.7 0.15 0.05 0.6 0.35 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.6 0.35 0.05 0.35 0.6 0.05 0.6 0.35 0.05 0.35 0.6 0 0.2 0.8 0.05 0.35 0.6 0 0.2 0.8 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="IceMspr">
+			<state id="0 to 0.5" />
+			<state id="0.5 to 2" />
+			<state id="2 to 4" />
+			<probabilities>0.3333333 0.3333333 0.3333333</probabilities>
+		</cpt>
+		<equation id="IceMspr">
+			<definition lower="0" upper="0">IceMspr=0</definition>
+		</equation>
+		<cpt id="AVAspr">
+			<state id="excellent" />
+			<state id="good" />
+			<state id="fair" />
+			<state id="poor" />
+			<parents>IceMspr SIEspr</parents>
+			<probabilities>1 0 0 0 0.95 0.05 0 0 0 0.25 0.5 0.25 0 0.15 0.5 0.35 0 0.1 0.5 0.4 0 0 0.15 0.85 0 0.1 0.2 0.7 0 0.05 0.2 0.75 0 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="EEspr">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>BENspr AVAspr</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.2 0.6 0.2 0.05 0.35 0.6 0.75 0.2 0.05 0.35 0.6 0.05 0.05 0.6 0.35 0.05 0.2 0.75 0.2 0.6 0.2 0.05 0.6 0.35 0.05 0.2 0.75 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="DPspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAspr</parents>
+			<probabilities>0.9 0.1 0 0.8 0.2 0 0.7000000000000001 0.2 0.1 0.6000000000000001 0.3 0.1</probabilities>
+		</cpt>
+		<cpt id="BODspr">
+			<state id="high" />
+			<state id="medium" />
+			<state id="low" />
+			<parents>EEspr DPspr OILspr</parents>
+			<probabilities>0.95 0.05 0 0.9 0.1 0 0 0.3 0.7 0.9 0.1 0 0 0.4 0.6 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.9 0.1 0 0.8 0.2 0 0 0.3 0.7 0.8 0.2 0 0 0.3 0.7 0 0.1 0.9 0 0.3 0.7 0 0.1 0.9 0 0 1 0.8 0.2 0 0.7 0.3 0 0 0.2 0.8 0.7 0.3 0 0 0.3 0.7 0 0.1 0.9 0 0.2 0.8 0 0.1 0.9 0 0 1</probabilities>
+		</cpt>
+		<cpt id="PRspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAspr</parents>
+			<probabilities>0.9 0.1 0 0.85 0.15 0 0.5 0.3 0.2 0.2 0.4 0.4</probabilities>
+		</cpt>
+		<cpt id="CRspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>AVAspr</parents>
+			<probabilities>0.95 0.05 0 0.7 0.25 0.05 0.3 0.4 0.3 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="HUMspr">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="TAOspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="TASspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<state id="veryhigh" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="DMspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>TAOspr TASspr</parents>
+			<probabilities>1 0 0 0.75 0.25 0 0 0.8 0.2 0 0 1 0.75 0.25 0 0.33 0.67 0 0 0.43 0.57 0 0 1 0 0.8 0.2 0 0.43 0.57 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="HDspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>HUMspr SATspr DMspr</parents>
+			<probabilities>0.85 0.15 0 0.7 0.25 0.05 0.3 0.5 0.2 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.7 0.25 0.05 0.3 0.5 0.2 0.2 0.5 0.3 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.6000000000000001 0.3 0.1 0.2 0.6 0.2 0.1 0.3 0.6 0.3 0.5 0.2 0.2 0.5 0.3 0.05 0.25 0.7 0.2 0.5 0.3 0.05 0.25 0.7 0 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="CDspr">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<parents>CRspr HDspr</parents>
+			<probabilities>0.9 0.1 0 0.6 0.35 0.05 0.15 0.7 0.15 0.6 0.35 0.05 0.15 0.7 0.15 0.05 0.35 0.6 0.15 0.7 0.15 0.05 0.35 0.6 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="TMspr">
+			<state id="low" />
+			<state id="moderate" />
+			<state id="high" />
+			<parents>PRspr CDspr DMspr</parents>
+			<probabilities>0.95 0.05 0 0.65 0.35 0 0.15 0.6 0.25 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.95 0.05 0 0.5 0.45 0.05 0.05 0.45 0.5 0.65 0.35 0 0.2 0.6 0.2 0 0.35 0.65 0.5 0.45 0.05 0.05 0.45 0.5 0 0.05 0.95 0.8 0.2 0 0.25 0.6 0.15 0 0.35 0.65 0.65 0.35 0 0.15 0.6 0.25 0 0.2 0.8 0.25 0.6 0.15 0 0.35 0.65 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="D1">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>AVAspr</parents>
+			<probabilities>0.9 0.1 0 1 1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="ASspr">
+			<state id="low" />
+			<state id="modlow" />
+			<state id="modhigh" />
+			<state id="high" />
+			<parents>BODspr TMspr D1</parents>
+			<probabilities>0.9 0.1 0 0 0.7 0.3 0 0 0.3 0.6000000000000001 0.1 0 0.6 0.4 0 0 0.25 0.5 0.25 0 0.1 0.6 0.3 0 0.1 0.6 0.3 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0.7 0.3 0 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0 0.25 0.5 0.25 0 0.1 0.6 0.3 0 0 0.25 0.5 0.25 0 0.3 0.6000000000000001 0.1 0 0.1 0.6 0.3 0 0 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="ASall">
+			<state id="low" />
+			<state id="modlow" />
+			<state id="modhigh" />
+			<state id="high" />
+			<parents>ASsumfal ASwin ASspr</parents>
+			<probabilities>0.95 0.05 0 0 0.9 0.1 0 0 0.25 0.5 0.25 0 0 0.3 0.5 0.2 0.9 0.1 0 0 0.6 0.4 0 0 0.25 0.5 0.25 0 0 0.2 0.6 0.2 0.25 0.5 0.25 0 0.25 0.5 0.25 0 0 0.2 0.6 0.2 0 0.1 0.3 0.6 0 0.3 0.5 0.2 0 0.2 0.6 0.2 0 0.1 0.3 0.6 0 0 0.1 0.9 0.9 0.1 0 0 0.6 0.4 0 0 0.25 0.5 0.25 0 0 0.2 0.6 0.2 0.6 0.4 0 0 0.2 0.6 0.2 0 0 0.4 0.6 0 0 0.2 0.6 0.2 0.25 0.5 0.25 0 0 0.4 0.6 0 0 0.1 0.4 0.5 0 0 0.3 0.7 0 0.2 0.6 0.2 0 0.2 0.6 0.2 0 0 0.3 0.7 0 0 0.1 0.9 0.25 0.5 0.25 0 0.25 0.5 0.25 0 0 0.2 0.6 0.2 0 0.1 0.3 0.6 0.25 0.5 0.25 0 0 0.4 0.6 0 0 0.1 0.4 0.5 0 0 0.3 0.7 0 0.2 0.6 0.2 0 0.1 0.4 0.5 0 0.1 0.3 0.6 0 0 0.1 0.9 0 0.1 0.3 0.6 0 0 0.3 0.7 0 0 0.1 0.9 0 0 0.1 0.9 0 0.3 0.5 0.2 0 0.2 0.6 0.2 0 0.1 0.3 0.6 0 0 0.1 0.9 0 0.2 0.6 0.2 0 0.2 0.6 0.2 0 0 0.3 0.7 0 0 0.1 0.9 0 0.1 0.3 0.6 0 0 0.3 0.7 0 0 0.1 0.9 0 0 0.1 0.9 0 0 0.1 0.9 0 0 0.1 0.9 0 0 0.1 0.9 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="AllOutCJ">
+			<state id="robust" />
+			<state id="persistent" />
+			<state id="vulnerable" />
+			<state id="rare" />
+			<state id="extirpation" />
+			<parents>SIEall ASall</parents>
+			<probabilities>0.9 0.1 0 0 0 0.6 0.4 0 0 0 0 0.2 0.6 0.2 0 0 0 0.2 0.4 0.4 0.7 0.3 0 0 0 0.5 0.5 0 0 0 0 0 0.8 0.2 0 0 0 0.1 0.4 0.5 0 0.5 0.5 0 0 0 0.15 0.7 0.15 0 0 0 0 0.4 0.6 0 0 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="TITLE10">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE4">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE6">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE7">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE8">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE9">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Time">
+			<state id="o1" />
+			<state id="o2" />
+			<state id="d1" />
+			<state id="d2" />
+			<state id="d3" />
+			<state id="d4" />
+			<state id="d5" />
+			<probabilities>0.1428571428571429 0.1428571428571429 0.1428571428571429 0.1428571428571429 0.1428571428571429 0.1428571428571429 0.1428571428571429</probabilities>
+		</cpt>
+		<cpt id="TITLE11">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="GCM">
+			<state id="observation" />
+			<state id="GCM18" />
+			<state id="GCM18_mean" />
+			<state id="GCM_sub_std1" />
+			<state id="GCM_sub_std2" />
+			<probabilities>0.2 0.2 0.2 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="TITLE12">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="TITLE5">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="SMILE Sep 17 2012" name="Sub0" faultnameformat="nodestate">
+			<comment>Full version of the model, one season portion of which appeared in Figure 2, from:\n\nJay, C. V., B. G. Marcot, and D. C. Douglas.  2011.  Projected status ofthe Pacific walrus \n(Odobenus rosmarus divergens) in the 21st century.  Polar Biology 34(7):1065-1084. \nAbstract:\nExtensive and rapid losses of sea ice in the Arctic have raised conservation concerns for \nthe Pacific walrus (Odobenus rosmarus divergens), a large pinniped inhabiting arctic and \nsubarctic continental shelf waters of the Chukchi and Bering seas. We developed a Bayesian \nnetwork model to integrate potential effects of changing environmental conditions and \nanthropogenic stressors on the future status of the Pacific walrus population at four \nperiods through the twenty-first century. The model framework allowed for inclusion of \nvarious sources and levels of knowledge, and representation of structural and parameter \nuncertainties. Walrus outcome probabilities through the century reflected a clear trend \nof worsening conditions for the subspecies. Fromthe current observationperiod to the \nend of century, the greatest change in walrus outcome probabilities was a progressive \ndecrease in the outcome state of robust and a concomitant increase in the outcome state \nof vulnerable. The probabilities of rare and extirpated states each progressively \nincreased but remained &lt;10% through the end of the century. The summed probabilities of \nvulnerable, rare, and extirpated (P(v,r,e)) increased from a current level of 10% in \n2004 to 22% by 2050 and 40% by 2095. The degree of uncertainty in walrusoutcomes \nincreased monotonically over future periods. In the model, sea ice habitat (particularly \nfor summer/fall) and harvest levels had the greatest influence on futurepopulation \noutcomes. Other potential stressors had much smaller influences on walrus outcomes, \nmostly because of uncertainty in their future states and our current poor understanding \nof their mechanistic influence on walrus abundance. \n\nFigure 2 caption:\nInXuence diagram of a Bayesian network model to project\nPaciWc walrus status in the twenty-Wrst century.This is the submodel\ndiagram for the summer/fall season; similar submodels pertained to\nwinter and spring seasons. The winter submodel included a sea ice\nbreeding environment  node between  shelf ice availability  and\nabundance stressors , and the spring submodel included a sea ice\nbirthing platform  nodebetween  shelf ice availability  and  abundance\nstressors.  Shown here is the model set to calculate outcome\nprobabilities for period2095 as depicted in Fig. 3.\n</comment>
+			<node id="TITLE1">
+				<name>Season: Summer / Fall.(months: JASON)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4354 792 4430 828</position>
+			</node>
+			<node id="GHG">
+				<name>GHG Scenario</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>6136 2130 6212 2166</position>
+			</node>
+			<node id="IceMsumfal">
+				<name>Ice free mos.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3364 792 3440 828</position>
+				<comment>Mean number of months with no sea ice \nto support hauled out walruses over the \ncontinental shelf of the Chukchi and Bering \nSeas.</comment>
+			</node>
+			<node id="IceCsumfal">
+				<name>% Chukchi Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3652 798 3728 834</position>
+				<comment>Extent of sea ice over the Chukchi Sea.  It is expressed \nas a percentage of total Chukchi Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="IceBsumfal">
+				<name>% Bering Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3976 792 4052 828</position>
+				<comment>Extent of sea ice over the Bering Sea.  It is expressed \nas a percentage of total Bering Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="SIEsumfal">
+				<name>Suitable ice extent</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4948 2040 5024 2076</position>
+				<comment>This node represents the potential range of walrus \nmovements in the Chukchi and Bering Seas as a function \nof the % extent of sea ice in the two seas.</comment>
+			</node>
+			<node id="AVAsumfal">
+				<name>Shelf ice availability</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3520 972 3596 1008</position>
+				<comment>Availability of sea ice to walruses for hauling out during \nthe season.  This node reflects two important aspects of \nsea ice relative to its availability to walruses for hauling \nout.  One is the amount of time no ice is present over the \nshelf, and hence, the amount of time walruses are forced \nto use terrestrial haulouts; the second, is the extent of sea \nice that is available to walruses.  When sea ice is present \nover the shelf, it can occur in much reduced \nconcentrations and distribution, such as remnant ice in \nsummer, which can affect the distances required for \nwalruses to travel to reach preferred benthic foraging \nareas.</comment>
+			</node>
+			<node id="DPsumfal">
+				<name>Disease and parasites</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3412 1176 3488 1212</position>
+				<comment>Incidence of diseases and parasites in the walrus \npopulation that would cause a substantial loss of stored \nenergy in an individual.</comment>
+			</node>
+			<node id="CCBsumfal">
+				<name>Climate change on benthos</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2761 840 2837 876</position>
+				<comment>This node represents the cumulative impact of many \nfactors related to climate change affecting the production \nof benthic prey.  A few of these include ice thickness, \ntiming of sea ice melt, duration of open water, and ocean \nacidification.</comment>
+			</node>
+			<node id="RUsumfal">
+				<name>Resource utilization</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2884 948 2960 984</position>
+				<comment>Impact to benthic prey production from activities that \ncan perturb the seafloor from extraction of natural \nresources, such as from commercial fishing and oil and \ngas development.  However, it is possible that perturbation \nto the seafloor at a certain magnitude and frequency \ncould enhance production by releasing nutrients from \nsediments and by allowing increased recruitment of \njuvenile organisms.</comment>
+			</node>
+			<node id="SATsumfal">
+				<name>Ship and air traffic</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2726 1398 2802 1434</position>
+				<comment>Amount of ship and air traffic from commercial shipping, \ntourism, commercial fishing, and oil and gas development.</comment>
+			</node>
+			<node id="OILsumfal">
+				<name>Oil spills</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2734 1212 2810 1248</position>
+				<comment>Regularity and severity of hydrocarbons unintentionally \nreleased from ship and air traffic, which can affect benthic \nproduction by directly fouling benthic organisms or by \ncausing decreased production in the water column and \nless food fall to the benthos.  It can also affect the body \ncondition of walruses through direct contact or indirect \nbioaccumulation through the food chain.</comment>
+			</node>
+			<node id="BENsumfal">
+				<name>Benthic prey abundance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2751 1092 2827 1128</position>
+				<comment>This node represents the abundance of benthic prey.</comment>
+			</node>
+			<node id="EEsumfal">
+				<name>Energy expenditure</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3172 1002 3248 1038</position>
+				<comment>This node represents energy expended on foraging and \nswimming.  As benthic prey becomes less abundant or \nshelf ice is less extensive to provide access to large areas \nof the continental shelf for foraging, walruses will spend \nmore time swimming to find and forage on prey patches.  \nThis might be especially true when walruses (particularly \nfemales and young) are forced to use terrestrial haulouts \nwhen ice is completely unavailable over the shelf.  \nWalruses might also spend considerable effort swimming \nin open, rough seas compared to swimming in seas \ndampened by sea ice.</comment>
+			</node>
+			<node id="PRsumfal">
+				<name>Predation and assoc. mort.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3742 1344 3818 1380</position>
+				<comment>Number of walruses killed by predators, which are primarily \npolar bears and killer whales.  This does not include \nhuman-caused mortalities.  It includes walruses killed \nindirectly from the predator being present and possibly \nstampeding the herd, which could lead to trampeling.\n</comment>
+			</node>
+			<node id="CRsumfal">
+				<name>Crowding</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3148 1428 3224 1464</position>
+				<comment>Crowding refers to the number of walruses at a haulout, \nand is particularly relevant to juvenile survival when \ndisturbances occur and animal stampedes ensue at \nterrestrial haulouts and possibly at large haulouts on ice \nduring much reduced sea ice concentrations.  Walruses \nare very gregarious and most often haul out in close \ncontact to one another, even when sufficient room exists \nto spread out.</comment>
+			</node>
+			<node id="IceCwin">
+				<name>% Chukchi Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3586 2148 3662 2184</position>
+				<comment>Extent of sea ice over the Chukchi Sea.  It is expressed \nas a percentage of total Chukchi Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="IceBwin">
+				<name>% Bering Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3892 2148 3968 2184</position>
+				<comment>Extent of sea ice over the Bering Sea.  It is expressed \nas a percentage of total Bering Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="SIEwin">
+				<name>Suitable ice extent</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4948 2142 5024 2178</position>
+				<comment>This node represents the potential range of dispersal \nin the Chukchi and Bering Seas as a function of the \n% extent of sea ice in the two seas when ice is present \nin either sea.</comment>
+			</node>
+			<node id="IceCspr">
+				<name>% Chukchi Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3646 3510 3722 3546</position>
+				<comment>Extent of sea ice over the Chukchi Sea.  It is expressed \nas a percentage of total Chukchi Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="IceBspr">
+				<name>% Bering Sea ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3952 3510 4028 3546</position>
+				<comment>Extent of sea ice over the Bering Sea.  It is expressed \nas a percentage of total Bering Sea area over the \ncontinental shelf.</comment>
+			</node>
+			<node id="SIEspr">
+				<name>Suitable ice extent</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4948 2244 5024 2280</position>
+				<comment>This node represents the potential range of dispersal \nin the Chukchi and Bering Seas as a function of the \n% extent of sea ice in the two seas when ice is present \nin either sea.</comment>
+			</node>
+			<node id="SIEall">
+				<name>All season suitable ice extent</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>5314 2202 5390 2238</position>
+				<comment>This node represents the potential range of walrus \nmovements in the Chukchi and Bering Seas during the \nyear as a function of the % extent of sea ice in the two \nseas in each of the 3 seasons.  This node is the \ncombination of the potential range of walruses in each of \nthe seasons.</comment>
+			</node>
+			<node id="BODsumfal">
+				<name>Body condition</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3862 1212 3938 1248</position>
+				<comment>The amount of body reserves an animal possesses, \nparticularly fat and muscle, and can be an indirect \nmeasure of reproductive performance.</comment>
+			</node>
+			<node id="HUMsumfal">
+				<name>Human settlements</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2842 1716 2918 1752</position>
+				<comment>The density of humans along the coasts of Alaska and \nRussia.  We expect this to be related to the amount of \nexposure walruses would receive at terrestrial haulouts \nalong the coast from humans and concomitant \ndevelopment activities.</comment>
+			</node>
+			<node id="TAOsumfal">
+				<name>Other takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3850 1740 3926 1776</position>
+				<comment>Number of walruses killed from illegal activities and \nincidentally from fishing, industry, and research activities \nin Russia and Alaska.</comment>
+			</node>
+			<node id="TASsumfal">
+				<name>Subsistence takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3502 1740 3578 1776</position>
+				<comment>Number of walruses killed by Native subsistence hunting \nin Russia and Alaska (including 42% struck and lost).</comment>
+			</node>
+			<node id="DMsumfal">
+				<name>Human-caused direct mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3658 1608 3734 1644</position>
+				<comment>Total number of walruses directly killed by humans in Russia and \nAlaska.</comment>
+			</node>
+			<node id="HDsumfal">
+				<name>Haulout disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2782 1590 2858 1626</position>
+				<comment>Level of disturbances to hauled out walruses on ice and \nparticularly on terrestrial haulouts.  Disturbances might \nincrease with levels of ship and air traffic, human \nsettlements near haulouts, and from total human takes.</comment>
+			</node>
+			<node id="CDsumfal">
+				<name>Crowding and disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3142 1554 3218 1590</position>
+				<comment>This is a summary node that refers to the intensity of a \ndisturbance on a haulout as functions of the level of \nwalrus crowding and the frequency and magnitude of \ndisturbances on the haulout.</comment>
+			</node>
+			<node id="TMsumfal">
+				<name>Total mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3700 1482 3776 1518</position>
+				<comment>Total number of walruses killed by humans, predation, \nand crowding and disturbance.</comment>
+			</node>
+			<node id="ASsumfal">
+				<name>Abundance stressors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4954 2442 5030 2478</position>
+				<comment>Walrus abundance stressors as a function of body \ncondition and total mortality.  Body condition reflects \nthe level of individual fitness and is expected to have \nan impact on walrus reproduction and survival.</comment>
+			</node>
+			<node id="CCBwin">
+				<name>Climate change on benthos</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2751 2268 2827 2304</position>
+				<comment>This node represents the cumulative impact of many \nfactors related to climate change affecting the production \nof benthic prey.  A few of these include ice thickness, \ntiming of sea ice melt, duration of open water, and ocean \nacidification.</comment>
+			</node>
+			<node id="RUwin">
+				<name>Resource utilization</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2896 2376 2972 2412</position>
+				<comment>Impact to benthic prey production from activities that \ncan perturb the seafloor from extraction of natural \nresources, such as from commercial fishing and oil and \ngas development.  However, it is possible that perturbation \nto the seafloor at a certain magnitude and frequency \ncould enhance production by releasing nutrients from \nsediments and by allowing increased recruitment of \njuvenile organisms.</comment>
+			</node>
+			<node id="SATwin">
+				<name>Ship and air traffic</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2713 2790 2789 2826</position>
+				<comment>Amount of ship and air traffic from commercial shipping, \ntourism, commercial fishing, and oil and gas development.</comment>
+			</node>
+			<node id="OILwin">
+				<name>Oil spills</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2722 2604 2798 2640</position>
+				<comment>Regularity and severity of hydrocarbons unintentionally \nreleased from ship and air traffic, which can affect benthic \nproduction by directly fouling benthic organisms or by \ncausing decreased production in the water column and \nless food fall to the benthos.  It can also affect the body \ncondition of walruses through direct contact or indirect \nbioaccumulation through the food chain.</comment>
+			</node>
+			<node id="BENwin">
+				<name>Benthic prey abundance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2740 2490 2816 2526</position>
+				<comment>This node represents the abundance of benthic prey.</comment>
+			</node>
+			<node id="IceMwin">
+				<name>Ice free mos.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3322 2142 3398 2178</position>
+				<comment>Mean number of months with no sea ice \nto support hauled out walruses over the \ncontinental shelf of the Chukchi and Bering \nSeas.</comment>
+			</node>
+			<node id="AVAwin">
+				<name>Shelf ice availability</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3436 2316 3512 2352</position>
+				<comment>Availability of sea ice to walruses for hauling out during \nthe season.  This node reflects two important aspects of \nsea ice relative to its availability to walruses for hauling \nout.  One is the amount of time no ice is present over the \nshelf, and hence, the amount of time walruses are forced \nto use terrestrial haulouts; the second, is the extent of sea \nice that is available to walruses.  When sea ice is present \nover the shelf, it can occur in much reduced \nconcentrations and distribution, such as remnant ice in \nsummer, which can affect the distances required for \nwalruses to travel to reach preferred benthic foraging \nareas.</comment>
+			</node>
+			<node id="EEwin">
+				<name>Energy expenditure</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3154 2406 3230 2442</position>
+				<comment>This node represents energy expended on foraging and \nswimming.  As benthic prey becomes less abundant or \nshelf ice is less extensive to provide access to large areas \nof the continental shelf for foraging, walruses will spend \nmore time swimming to find and forage on prey patches.  \nThis might be especially true when walruses (particularly \nfemales and young) are forced to use terrestrial haulouts \nwhen ice is completely unavailable over the shelf.  \nWalruses might also spend considerable effort swimming \nin open, rough seas compared to swimming in seas \ndampened by sea ice.</comment>
+			</node>
+			<node id="DPwin">
+				<name>Disease and parasites</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3382 2568 3458 2604</position>
+				<comment>Incidence of diseases and parasites in the walrus \npopulation that would cause a substantial loss of stored \nenergy in an individual.</comment>
+			</node>
+			<node id="BODwin">
+				<name>Body condition</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3784 2604 3860 2640</position>
+				<comment>The amount of body reserves an animal possesses, \nparticularly fat and muscle, and can be an indirect \nmeasure of reproductive performance.</comment>
+			</node>
+			<node id="PRwin">
+				<name>Predation and assoc. mort.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3718 2742 3794 2778</position>
+				<comment>Number of walruses killed by predators, which are primarily \npolar bears and killer whales.  This does not include \nhuman-caused mortalities.  It includes walruses killed \nindirectly from the predator being present and possibly \nstampeding the herd, which could lead to trampeling.\n</comment>
+			</node>
+			<node id="CRwin">
+				<name>Crowding</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3130 2826 3206 2862</position>
+				<comment>Crowding refers to the number of walruses at a haulout, \nand is particularly relevant to juvenile survival when \ndisturbances occur and animal stampedes ensue at \nterrestrial haulouts and possibly at large haulouts on ice \nduring much reduced sea ice concentrations.  Walruses \nare very gregarious and most often haul out in close \ncontact to one another, even when sufficient room exists \nto spread out.</comment>
+			</node>
+			<node id="HUMwin">
+				<name>Human settlements</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2872 3126 2948 3162</position>
+				<comment>The density of humans along the coasts of Alaska and \nRussia.  We expect this to be related to the amount of \nexposure walruses would receive at terrestrial haulouts \nalong the coast from humans and concomitant \ndevelopment activities.</comment>
+			</node>
+			<node id="TAOwin">
+				<name>Other takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3868 3144 3944 3180</position>
+				<comment>Number of walruses killed from illegal activities and \nincidentally from fishing, industry, and research activities \nin Russia and Alaska.</comment>
+			</node>
+			<node id="TASwin">
+				<name>Subsistence takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3526 3144 3602 3180</position>
+				<comment>Number of walruses killed by Native subsistence hunting \nin Russia and Alaska (including 42% struck and lost).</comment>
+			</node>
+			<node id="DMwin">
+				<name>Human-caused direct mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3682 3012 3758 3048</position>
+				<comment>Total number of walruses directly killed by humans in Russia and \nAlaska.</comment>
+			</node>
+			<node id="HDwin">
+				<name>Haulout disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2782 2964 2858 3000</position>
+				<comment>Level of disturbances to hauled out walruses on ice and \nparticularly on terrestrial haulouts.  Disturbances might \nincrease with levels of ship and air traffic, human \nsettlements near haulouts, and from total human takes.</comment>
+			</node>
+			<node id="CDwin">
+				<name>Crowding and disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3124 2952 3200 2988</position>
+				<comment>This is a summary node that refers to the intensity of a \ndisturbance on a haulout as functions of the level of \nwalrus crowding and the frequency and magnitude of \ndisturbances on the haulout.</comment>
+			</node>
+			<node id="TMwin">
+				<name>Total mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3688 2892 3764 2928</position>
+				<comment>Total number of walruses killed by humans, predation, \nand crowding and disturbance.</comment>
+			</node>
+			<node id="D">
+				<name>Breeding environment</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3814 2460 3890 2496</position>
+				<comment>This node reflects the adequacy of ice habitat for \nbreeding.  Male walruses court females with songs from \nthe water to entice the females into the water from ice \nhaulouts to mate.  Ice haulouts provide large areas for \nterritorial males to station.  We are assuming that if ice \nbecomes unavailable in the Bering Sea in spring, but still \navailable in the Chukchi Sea, that the Chukchi Sea would \nbe equally adequate for this function.</comment>
+			</node>
+			<node id="ASwin">
+				<name>Abundance stressors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4954 2562 5030 2598</position>
+				<comment>Walrus abundance stressors as a function of body \ncondition and total mortality.  Body condition reflects \nthe level of individual fitness and is expected to have \nan impact on walrus reproduction and survival.</comment>
+			</node>
+			<node id="CCBspr">
+				<name>Climate change on benthos</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2751 3606 2827 3642</position>
+				<comment>This node represents the cumulative impact of many \nfactors related to climate change affecting the production \nof benthic prey.  A few of these include ice thickness, \ntiming of sea ice melt, duration of open water, and ocean \nacidification.</comment>
+			</node>
+			<node id="RUspr">
+				<name>Resource utilization</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2896 3702 2972 3738</position>
+				<comment>Impact to benthic prey production from activities that \ncan perturb the seafloor from extraction of natural \nresources, such as from commercial fishing and oil and \ngas development.  However, it is possible that perturbation \nto the seafloor at a certain magnitude and frequency \ncould enhance production by releasing nutrients from \nsediments and by allowing increased recruitment of \njuvenile organisms.</comment>
+			</node>
+			<node id="SATspr">
+				<name>Ship and air traffic</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2713 4128 2789 4164</position>
+				<comment>Amount of ship and air traffic from commercial shipping, \ntourism, commercial fishing, and oil and gas development.</comment>
+			</node>
+			<node id="OILspr">
+				<name>Oil spills</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2716 3948 2792 3984</position>
+				<comment>Regularity and severity of hydrocarbons unintentionally \nreleased from ship and air traffic, which can affect benthic \nproduction by directly fouling benthic organisms or by \ncausing decreased production in the water column and \nless food fall to the benthos.  It can also affect the body \ncondition of walruses through direct contact or indirect \nbioaccumulation through the food chain.</comment>
+			</node>
+			<node id="BENspr">
+				<name>Benthic prey abundance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2746 3828 2822 3864</position>
+				<comment>This node represents the abundance of benthic prey.</comment>
+			</node>
+			<node id="IceMspr">
+				<name>Ice free mos.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3376 3498 3452 3534</position>
+				<comment>Mean number of months with no sea ice \nto support hauled out walruses over the \ncontinental shelf of the Chukchi and Bering \nSeas.</comment>
+			</node>
+			<node id="AVAspr">
+				<name>Shelf ice availability</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3454 3684 3530 3720</position>
+				<comment>Availability of sea ice to walruses for hauling out during \nthe season.  This node reflects two important aspects of \nsea ice relative to its availability to walruses for hauling \nout.  One is the amount of time no ice is present over the \nshelf, and hence, the amount of time walruses are forced \nto use terrestrial haulouts; the second, is the extent of sea \nice that is available to walruses.  When sea ice is present \nover the shelf, it can occur in much reduced \nconcentrations and distribution, such as remnant ice in \nsummer, which can affect the distances required for \nwalruses to travel to reach preferred benthic foraging \nareas.</comment>
+			</node>
+			<node id="EEspr">
+				<name>Energy expenditure</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3154 3732 3230 3768</position>
+				<comment>This node represents energy expended on foraging and \nswimming.  As benthic prey becomes less abundant or \nshelf ice is less extensive to provide access to large areas \nof the continental shelf for foraging, walruses will spend \nmore time swimming to find and forage on prey patches.  \nThis might be especially true when walruses (particularly \nfemales and young) are forced to use terrestrial haulouts \nwhen ice is completely unavailable over the shelf.  \nWalruses might also spend considerable effort swimming \nin open, rough seas compared to swimming in seas \ndampened by sea ice.</comment>
+			</node>
+			<node id="DPspr">
+				<name>Disease and parasites</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3412 3900 3488 3936</position>
+				<comment>Incidence of diseases and parasites in the walrus \npopulation that would cause a substantial loss of stored \nenergy in an individual.</comment>
+			</node>
+			<node id="BODspr">
+				<name>Body condition</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3820 3948 3896 3984</position>
+				<comment>The amount of body reserves an animal possesses, \nparticularly fat and muscle, and can be an indirect \nmeasure of reproductive performance.</comment>
+			</node>
+			<node id="PRspr">
+				<name>Predation and assoc. mort.</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3736 4074 3812 4110</position>
+				<comment>Number of walruses killed by predators, which are primarily \npolar bears and killer whales.  This does not include \nhuman-caused mortalities.  It includes walruses killed \nindirectly from the predator being present and possibly \nstampeding the herd, which could lead to trampeling.\n</comment>
+			</node>
+			<node id="CRspr">
+				<name>Crowding</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3142 4152 3218 4188</position>
+				<comment>Crowding refers to the number of walruses at a haulout, \nand is particularly relevant to juvenile survival when \ndisturbances occur and animal stampedes ensue at \nterrestrial haulouts and possibly at large haulouts on ice \nduring much reduced sea ice concentrations.  Walruses \nare very gregarious and most often haul out in close \ncontact to one another, even when sufficient room exists \nto spread out.</comment>
+			</node>
+			<node id="HUMspr">
+				<name>Human settlements</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2848 4452 2924 4488</position>
+				<comment>The density of humans along the coasts of Alaska and \nRussia.  We expect this to be related to the amount of \nexposure walruses would receive at terrestrial haulouts \nalong the coast from humans and concomitant \ndevelopment activities.</comment>
+			</node>
+			<node id="TAOspr">
+				<name>Other takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3886 4476 3962 4512</position>
+				<comment>Number of walruses killed from illegal activities and \nincidentally from fishing, industry, and research activities \nin Russia and Alaska.</comment>
+			</node>
+			<node id="TASspr">
+				<name>Subsistence takes (no./season)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3538 4476 3614 4512</position>
+				<comment>Number of walruses killed by Native subsistence hunting \nin Russia and Alaska (including 42% struck and lost).</comment>
+			</node>
+			<node id="DMspr">
+				<name>Human-caused direct mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3694 4338 3770 4374</position>
+				<comment>Total number of walruses directly killed by humans in Russia and \nAlaska.</comment>
+			</node>
+			<node id="HDspr">
+				<name>Haulout disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2782 4302 2858 4338</position>
+				<comment>Level of disturbances to hauled out walruses on ice and \nparticularly on terrestrial haulouts.  Disturbances might \nincrease with levels of ship and air traffic, human \nsettlements near haulouts, and from total human takes.</comment>
+			</node>
+			<node id="CDspr">
+				<name>Crowding and disturbance</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3130 4290 3206 4326</position>
+				<comment>This is a summary node that refers to the intensity of a \ndisturbance on a haulout as functions of the level of \nwalrus crowding and the frequency and magnitude of \ndisturbances on the haulout.</comment>
+			</node>
+			<node id="TMspr">
+				<name>Total mortality</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3724 4212 3800 4248</position>
+				<comment>Total number of walruses killed by humans, predation, \nand crowding and disturbance.</comment>
+			</node>
+			<node id="D1">
+				<name>Birthing platform</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>3802 3792 3878 3828</position>
+				<comment>This node reflects the adequacy of spring ice habitat as \nsubstrate for walruses to give birth to calves and provide \nprotection during severe storms.  Parturition occurs on the \nice.  We are assuming that  if ice becomes unavailable in \nthe Bering Sea in spring, but still available in the Chukchi \nSea, that the Chukchi Sea would be equally adequate for \nthis function.</comment>
+			</node>
+			<node id="ASspr">
+				<name>Abundance stressors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4954 2676 5030 2712</position>
+				<comment>Walrus abundance stressors as a function of body \ncondition and total mortality.  Body condition reflects \nthe level of individual fitness and is expected to have \nan impact on walrus reproduction and survival.</comment>
+			</node>
+			<node id="ASall">
+				<name>All season abund stressors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>5314 2352 5390 2388</position>
+				<comment>This node reflects the combination of abundance stressors\namong all 3 seasons, indicating an annual abundance\nstressors.</comment>
+			</node>
+			<node id="AllOutCJ">
+				<name>All-season outcome (CJ)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>5656 2280 5732 2316</position>
+			</node>
+			<node id="TITLE10">
+				<name>Scenario, Time Period,.             and GCM set:</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>6094 2028 6170 2064</position>
+			</node>
+			<node id="TITLE4">
+				<name>Season: Winter.(months: DJFM)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4312 2256 4388 2292</position>
+			</node>
+			<node id="TITLE6">
+				<name>Color code:.yellow = input node (climate factors,.    anthropogenic stressors).rose = intermediate (calculated) nodes.green = output node.orange = season-specific node.red = ESA listing factors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4330 2406 4406 2442</position>
+			</node>
+			<node id="TITLE7">
+				<name>Season: Spring.(months: AMJ)</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4270 3654 4346 3690</position>
+			</node>
+			<node id="TITLE8">
+				<name>Color code:.yellow = input node (climate factors,.    anthropogenic stressors).rose = intermediate (calculated) nodes.green = output node.orange = season-specific node.red = ESA listing factors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4270 3786 4346 3822</position>
+			</node>
+			<node id="TITLE9">
+				<name>ALL SEASONS.COMBINED</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>5644 2472 5720 2508</position>
+			</node>
+			<node id="Time">
+				<name>Time Period</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>6064 2280 6140 2316</position>
+			</node>
+			<node id="TITLE11">
+				<name>Pacific Walrus Stressor Model.v. 100618a.(without Listing Factors).Walrus biologist:  Chad Jay, USGS.Modeler:  Bruce Marcot, USFS</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>2818 678 2894 714</position>
+			</node>
+			<node id="GCM">
+				<name>GCM set</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>6118 2454 6194 2490</position>
+				<comment>Source of data for the ice cover variables:\n\nobservation = satellite data for historic and current time \n  periods\n\nGlobal circulation model (GCM) sources for future time\n  periods:\n\nGCM18 = frequency distribution of each ice cover \n  variable, among all 18 GCMs\nGCM18 mean = mean value of each ice cover variable,\n  among all 18 GCMs\nGCM sub SD1 = frequency distribution of each ice cover\n  variable, among the 1SD subset of GCMs\nGCM sub SD2 = frequency distribution of each ice cover\n  variable, among the 2SD subset of GCMs\n</comment>
+			</node>
+			<node id="TITLE12">
+				<name>Pacific Walrus Stressor Model.v. 100618a.(without Listing Factors).Walrus biologist:  Chad Jay, USGS.Modeler:  Bruce Marcot, USFS</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>5488 1974 5564 2010</position>
+			</node>
+			<node id="TITLE5">
+				<name>Color code:.yellow = input nodes (climate factors,.  anthropogenic stressors).rose = intermediate (calculated) nodes.green = output nodes.blue = scenarios and time periods.red = ESA listing factors</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>4348 960 4424 996</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
